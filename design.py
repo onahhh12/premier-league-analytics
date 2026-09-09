@@ -45,9 +45,7 @@ def setup_page():
     }
 
 
-    /* =========================
-       HERO
-       ========================= */
+    /* HERO */
 
     .hero {
         position: relative;
@@ -189,9 +187,7 @@ def setup_page():
     }
 
 
-    /* =========================
-       ANIMATIONS
-       ========================= */
+    /* Animations */
 
     @keyframes heroEnter {
 
@@ -223,25 +219,60 @@ def setup_page():
     </style>
     """, unsafe_allow_html=True)
 
-
 def hero():
+
+    # Football visual
     st.markdown(
         """
-        <div class="hero">
-            <div class="hero-mark">⚽</div>
-
-            <div class="hero-title">
-                Premier League
-            </div>
-
-            <div class="hero-subtitle">
-                AI Football Analytics & Match Predictions
-            </div>
-
-            <div class="hero-tag">
-                MACHINE LEARNING · MATCH INTELLIGENCE
-            </div>
+        <div style="
+            width:105px;
+            height:105px;
+            margin:80px auto 30px auto;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:rgba(120,70,180,0.15);
+            border:1px solid rgba(180,120,255,0.35);
+            box-shadow:0 0 50px rgba(140,70,220,0.25);
+            font-size:45px;
+        ">
+            ⚽
         </div>
         """,
         unsafe_allow_html=True
     )
+
+    # Hero text
+    st.markdown(
+        "<h1 style='text-align:center; font-size:64px; font-weight:800; color:white;'>Premier League</h1>",
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        "<p style='text-align:center; color:#c8a9ff; font-size:12px; letter-spacing:2px;'>MACHINE LEARNING · MATCH INTELLIGENCE</p>",
+        unsafe_allow_html=True
+    )
+
+    #Predictor
+
+def predictor_header():
+    st.markdown(
+        "<p style='text-align:center; color:#c8a9ff; "
+        "font-size:12px; font-weight:700; letter-spacing:2px;'>"
+        "AI MATCH PREDICTOR</p>",
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        "<h2 style='text-align:center; color:white;'>"
+        "Match Analysis</h2>",
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        "<p style='text-align:center; color:#888894;'>"
+        "Compare team performance and predict the outcome.</p>",
+        unsafe_allow_html=True
+    )
+
