@@ -2,10 +2,15 @@ import streamlit as st
 import pandas as pd
 import requests
 import tomllib
+
 from features import create_features, get_live_team_stats
 from model import split_data, train_model
+from design import setup_page, hero
 
-st.set_page_config(page_title="Premier League Predictor", layout="wide")
+setup_page(
+
+)
+
 
 #Secrets (loaded once, at the top, so every function below can see them)
 with open("resources/secrets.toml", "rb") as f:
@@ -147,12 +152,18 @@ def heuristic_prediction(home, away):
         return "D", diff
 
 
+
 data = load_data()
 model = train()
 previous_season = load_previous_season()
-latest_stats = get_live_team_stats(data, previous_season, CURRENT_SEASON_TEAMS, min_matches=5)
+latest_stats = get_live_team_stats(
+    data,
+    previous_season,
+    CURRENT_SEASON_TEAMS,
+    min_matches=5
+)
 
-st.title("⚽ Premier League Match Predictor")
+hero()
 
 tab1, tab2 = st.tabs(["Predict a Match", "League Table"])
 
