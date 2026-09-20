@@ -1,8 +1,6 @@
 import streamlit as st
 import pandas as pd
 import requests
-import tomllib
-
 from features import create_features, get_live_team_stats
 from model import split_data, train_model
 from design import setup_page, hero, predictor_header
@@ -13,11 +11,7 @@ from design import setup_page, hero, predictor_header
 setup_page()
 
 # SECRETS
-
-with open("resources/secrets.toml", "rb") as f:
-    secrets = tomllib.load(f)
-
-FOOTBALL_DATA_KEY = secrets["API_KEY"]
+FOOTBALL_DATA_KEY = st.secrets["API_KEY"]
 
 
 # CURRENT SEASON TEAMS
