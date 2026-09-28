@@ -173,6 +173,7 @@ def get_live_standings():
     for entry in table_entries:
 
         rows.append({
+            "Pos": entry["Postition"],
             "Team": entry["team"]["name"],
             "Played": entry["playedGames"],
             "Points": entry["points"],
@@ -184,7 +185,7 @@ def get_live_standings():
             "Goal Difference": entry["goalDifference"],
         })
 
-    table = pd.DataFrame(rows).set_index("Team")
+    table = pd.DataFrame(rows)
 
     return table
 
@@ -424,7 +425,8 @@ with tab2:
 
         st.dataframe(
             table,
-            width="stretch"
+            width="stretch",
+            hide_index=True
         )
 
     except Exception as e:
